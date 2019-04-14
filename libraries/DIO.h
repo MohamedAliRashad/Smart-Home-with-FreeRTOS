@@ -64,4 +64,4 @@ Return:
 
 */
 
-#endif // DIO_H
+#endif /* DIO_H */

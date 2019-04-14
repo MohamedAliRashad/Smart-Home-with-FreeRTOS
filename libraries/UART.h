@@ -5,4 +5,4 @@
 #include "tm4c123gh6pm.h"
 
 
-#endif // UART_H
+#endif /* UART_H */

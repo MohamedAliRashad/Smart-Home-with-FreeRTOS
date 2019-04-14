@@ -81,4 +81,4 @@ Return:
     Nothing
 */
 
-#endif // PORT_H
+#endif /* PORT_H */

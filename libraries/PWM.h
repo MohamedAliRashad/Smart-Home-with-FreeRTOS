@@ -5,4 +5,4 @@
 #include "tm4c123gh6pm.h"
 
 
-#endif // PWM_H
+#endif /* PWM_H */

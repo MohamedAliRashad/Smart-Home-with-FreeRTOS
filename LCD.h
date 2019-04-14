@@ -1,8 +1,8 @@
-#ifndef LCD_H
+#ifndef LCD_H   /* Include guard */
 #define LCD_H
 
-#include "PORT.h"
-#include "DIO.h"
+#include "libraries/DIO.h"
+#include "libraries/PORT.h"
 
 void LCD_init8bit(void);
 void LCD_init4bit(void);
@@ -46,4 +46,4 @@ Return:
     
 */
 
-#endif /* TM4C123_H */
+#endif /* LCD_H */
