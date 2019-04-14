@@ -1,6 +1,9 @@
 #ifndef DIO_H   /* Include guard */
 #define DIO_H
 
+// include Registers Header
+#include "tm4c123gh6pm.h"
+
 typedef unsigned char uint8_t;
 
 enum Dio_LevelType {STD_LOW = 0, STD_HIGH = 1};

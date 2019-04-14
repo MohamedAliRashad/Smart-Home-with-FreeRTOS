@@ -1,6 +1,9 @@
 #ifndef PORT_H   /* Include guard */
 #define PORT_H
 
+// include Registers Header
+#include "tm4c123gh6pm.h"
+
 typedef unsigned char uint8_t;
 
 enum Port_PinDirectionType {PORT_PIN_IN = 0, PORT_PIN_OUT = 1};
