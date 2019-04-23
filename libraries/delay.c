@@ -1,6 +1,5 @@
-#include"stdint.h"
-#include"tm4c123gh6pm.h"
-#include"LCD.h"
+#include "stdint.h"
+#include "tm4c123gh6pm.h"
 void systick_wait (uint32_t delay)
 {
 	NVIC_ST_RELOAD_R = delay-1;
