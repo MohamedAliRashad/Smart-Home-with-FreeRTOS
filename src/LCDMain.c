@@ -1,4 +1,4 @@
-#include"LCD.h"
+#include "LCD.h"
 void systick_wait (uint32_t delay) //used in the two delay functions 
 {
 	NVIC_ST_RELOAD_R = delay-1;
