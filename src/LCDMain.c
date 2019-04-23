@@ -1,7 +1,4 @@
-#include"stdint.h"
-#include"tm4c123gh6pm.h"
 #include"LCD.h"
-#include"PORT.h"
 void systick_wait (uint32_t delay) //used in the two delay functions 
 {
 	NVIC_ST_RELOAD_R = delay-1;
@@ -32,10 +29,10 @@ void LCD_data(char data) //sending data to lcd function
 	delayUS(100); //high to low delay (might be adjusted)
 	GPIO_PORTD_DATA_R = 0; //enable "E" is low
 }
-void LCD_command(char com) //sending command function through port E pins(0,1,2), 0-->RS, 1-->RW, 2-->E
+void LCD_command(char com) //sending command through port B function
 {
 	GPIO_PORTD_DATA_R =0; //RS & RW =0
-	GPIO_PORTB_DATA_R = com; //sending commant to lcd
+	GPIO_PORTB_DATA_R = com; //sending command to lcd
 	GPIO_PORTD_DATA_R |= 0x04; //enable "E" is high
 	delayUS(100); //high to low delay (might be adjusted)
 	GPIO_PORTD_DATA_R = 0; //enable "E" is low
@@ -45,7 +42,7 @@ void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS 
 {	
   Port_Init(1); //Port B init
 	Port_SetPinDirection(1,0xFF,PORT_PIN_OUT);
-	/* init of port E pins 0,1,2 */	
+	/* init of port D pins 0,1,2 */	
 		SYSCTL_RCGCGPIO_R |= 0x08;
 		GPIO_PORTD_LOCK_R = 0x4C4F434B;
 		GPIO_PORTD_CR_R |= 0x07;
@@ -54,7 +51,7 @@ void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS 
 		GPIO_PORTD_AMSEL_R = 0;
 		GPIO_PORTD_DEN_R |= 0x07;
 		GPIO_PORTD_DIR_R |= 0x07;
-	/* end init of port E */
+	/* end init of port D */
 		LCD_command(0x30); //lcd wakeup
 	  delayUS(45); //wakeup delay
 		LCD_command(0x0F); //lcd display on & cursor blinking
