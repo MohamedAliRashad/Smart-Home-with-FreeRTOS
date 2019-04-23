@@ -6,7 +6,7 @@ void systick_wait (uint32_t delay) //used in the two delay functions
 {
 	NVIC_ST_RELOAD_R = delay-1;
 	NVIC_ST_CURRENT_R = 0;
-	while((NVIC_ST_CTRL_R & 0x0001000) ==0){}
+	while((NVIC_ST_CTRL_R & 0x00010000) ==0){}
 }
 void delayMS(uint32_t n) //gets n number as parameter and causes n milliseconds delay
 {
@@ -56,7 +56,7 @@ void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS 
 		GPIO_PORTD_DIR_R |= 0x07;
 	/* end init of port E */
 		LCD_command(0x30); //lcd wakeup
-	  delayUS(45); //wakeup dealay
+	  delayUS(45); //wakeup delay
 		LCD_command(0x0F); //lcd display on & cursor blinking
 	  delayUS(45); //lcd display on delay
 		LCD_command(0x38); //2 lines 5*7 characters
