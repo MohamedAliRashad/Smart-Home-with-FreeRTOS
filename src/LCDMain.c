@@ -41,7 +41,7 @@ void LCD_command(char com) //sending command through port B function
 void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS OF PORT B"
 {	
   Port_Init(1); //Port B init
-	Port_SetPinDirection(1,0xFF,PORT_PIN_OUT);
+	Port_SetPinDirection(1,0xFF,1);
 	/* init of port D pins 0,1,2 */	
 		SYSCTL_RCGCGPIO_R |= 0x08;
 		GPIO_PORTD_LOCK_R = 0x4C4F434B;
