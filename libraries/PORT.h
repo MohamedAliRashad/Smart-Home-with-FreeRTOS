@@ -1,12 +1,17 @@
-#ifndef PORT_H   /* Include guard */
+#ifndef PORT_H /* Include guard */
 #define PORT_H
 
 // include Registers Header
 #include "tm4c123gh6pm.h"
+#include <stdint.h>
+#include "delay.h"
 
-typedef unsigned char uint8_t;
+typedef enum Port_PinDirectionType
+{
+    PORT_PIN_IN = 0,
+    PORT_PIN_OUT = 1
+} Port_PinDirectionType;
 
-enum Port_PinDirectionType {PORT_PIN_IN = 0, PORT_PIN_OUT = 1};
 /*
 Enum is used to assign names to integer values
 
@@ -23,6 +28,7 @@ And PORT_PIN_OUT to 1, So we can use the the names instead of the values.
 */
 
 void Port_Init(uint8_t port_index);
+
 /*
 Description: Initialize port based on selected port_index (0 to 5) by:
     1- Enabling the clock
@@ -37,6 +43,7 @@ Return:
 */
 
 void Port_SetPinDirection(uint8_t port_index, uint8_t pins_mask, Port_PinDirectionType pins_direction);
+
 /*
 Description: Change the direction of the selected pins (INPUT or OUTPUT).
 
@@ -50,6 +57,7 @@ Return:
 */
 
 void Port_SetPinPullUp(uint8_t port_index, uint8_t pins_mask, uint8_t enable);
+
 /*
 Description: Make the Pins chosen pulled up internally with resistance.
 
@@ -66,6 +74,7 @@ Return:
 */
 
 void Port_SetPinPullDown(uint8_t port_index, uint8_t pins_mask, uint8_t enable);
+
 /*
 Description: Make the Pins chosen pulled down internally with resistance.
 
