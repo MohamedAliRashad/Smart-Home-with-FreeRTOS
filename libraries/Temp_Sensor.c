@@ -10,10 +10,11 @@ void TempSensor_init()
                                     /* Set bit3: for internal temp sensor enabling */	
 }
 
+/*
 float TempSensor_readTemp()
 {
-    float temp = 0.0;
-    ADC0_start_conversion(); 
-	temp = 147.5 - (247 * result) / 4096; /* from the datasheet */
-    return temp;
+
+ 
 }
+
+*/
