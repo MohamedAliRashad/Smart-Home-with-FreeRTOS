@@ -1,19 +1,51 @@
 #include "ADC.h"
 
-/*
+
 void ADC0_channelConfig(uint8_t channel_num)
     {
-		// implementation to be added here
-   
+        /* Only channels AIN0 : AIN3 are supported here, the rest will be implemented ISA */
+
+        switch (channel_num)
+        {
+        case AIN0:
+            SYSCTL_RCGCGPIO_R |= 0x10;      /* Enable PORTE Clock */
+            GPIO_PORTE_AFSEL_R |=(1 << 3);    /* Alternative Function Select */
+            GPIO_PORTE_AMSEL_R |=(1 << 3);    /* Enable Analog function */
+            GPIO_PORTE_DEN_R &= ~(1 << 3);    /* Disable Digiral on Pin */
+        break;
+
+        case AIN1:
+            SYSCTL_RCGCGPIO_R |= 0x10;      /* Enable PORTE Clock */
+            GPIO_PORTE_AFSEL_R |=(1 << 2);    /* Alternative Function Select */
+            GPIO_PORTE_AMSEL_R |=(1 << 2);    /* Enable Analog function */
+            GPIO_PORTE_DEN_R &= ~(1 << 2);    /* Disable Digiral on Pin */
+        break;
+    
+        case AIN2:
+            SYSCTL_RCGCGPIO_R |= 0x10;      /* Enable PORTE Clock */
+            GPIO_PORTE_AFSEL_R |=(1 << 1);    /* Alternative Function Select */
+            GPIO_PORTE_AMSEL_R |=(1 << 1);    /* Enable Analog function */
+            GPIO_PORTE_DEN_R &= ~(1 << 1);    /* Disable Digiral on Pin */
+        break;
+
+        case AIN3:
+            SYSCTL_RCGCGPIO_R |= 0x10;      /* Enable PORTE Clock */
+            GPIO_PORTE_AFSEL_R |=(1 << 0);    /* Alternative Function Select */
+            GPIO_PORTE_AMSEL_R |=(1 << 0);    /* Enable Analog function */
+            GPIO_PORTE_DEN_R &= ~(1 << 0);    /* Disable Digiral on Pin */
+        break;
+        
+        default:
+            break;
+        }
     }
 
-*/
 void ADC0_init (uint8_t channel_num, triggerType trig_type)
 {
 
     SYSCTL_RCGCADC_R |=(1 << 0);  /* enable clock to ADC0 */
 
-    //ADC0_channelConfig(channel_num);
+    ADC0_channelConfig(channel_num);
    
     ADC0_ACTSS_R &=~ (1 << 3);      // Disable Sample Sequencer 3 
     ADC0_EMUX_R &= ~0XF000;      //Software trigger conversionv: Set zeros in the bits from 12:15
@@ -42,12 +74,14 @@ void ADC0_init (uint8_t channel_num, triggerType trig_type)
     #endif        
         
     }
-/*
+
 void ADC0_start_conversion()
 {
- /* implementation to be added here */
+    ADC0_PSSI_R |= ( 1 << 3); /* start a conversion sequence 3 */ 
+    while((ADC0_RIS_R & (1 << 3)) == 0) ; /* Wait for conversion complete */
+    result = ADC0_SSFIFO3_R; /* read conversion result & store it in the volatile 16-bit variable */
+    ADC0_ISC_R |= (1 << 3); /* clear completion flag */   
 }
-*/
 
 
 
