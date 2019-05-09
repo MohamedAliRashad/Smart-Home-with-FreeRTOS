@@ -1,9 +1,8 @@
 
 #include "potentiometer.h"
 
-#define channel AIN1
 
-float Read_Potentiometer()
+float Read_Potentiometer(uint8_t channel)
 {
     float voltge;
     ADC0_init(channel, TIMER_TRIGGER); /* Initialize ADC with Analog Input Channel 1 and timer periodic triggering */
