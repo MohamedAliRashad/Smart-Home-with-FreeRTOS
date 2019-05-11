@@ -4,6 +4,8 @@
 #include "stdint.h"
 #include "tm4c123gh6pm.h"
 
+void systick_init(void);
+
 void systick_wait(uint32_t delay);
 
 void delayMS(uint32_t n);
