@@ -10,7 +10,7 @@ typedef enum
     TIMER_TRIGGER
 } triggerType;
 
-volatile uint16_t result;
+extern uint16_t result;
 
 /*************** Channel Numbers *************/
 
