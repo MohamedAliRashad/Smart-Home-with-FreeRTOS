@@ -1,8 +1,8 @@
 #ifndef LCD_H
 #define	LCD_H
 
-
-#include "Mcal.h"
+#include "PORT.h"
+#include "DIO.h"
 #include "tm4c123gh6pm.h"
 
 /* LCD HardWare Pins */
