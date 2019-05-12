@@ -35,22 +35,22 @@ void DIO_WritePort(uint8_t port_index, uint8_t pins_mask, Dio_LevelType pins_lev
         switch (port_index)
         {
         case 0:
-            GPIO_PORTA_DATA_R = GPIO_PORTA_DATA_R & pins_mask;
+            GPIO_PORTA_DATA_R = GPIO_PORTA_DATA_R & ~pins_mask;
             break; //port A
         case 1:
-            GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R & pins_mask;
+            GPIO_PORTB_DATA_R = GPIO_PORTB_DATA_R & ~pins_mask;
             break; //port B
         case 2:
-            GPIO_PORTC_DATA_R = GPIO_PORTC_DATA_R & pins_mask;
+            GPIO_PORTC_DATA_R = GPIO_PORTC_DATA_R & ~pins_mask;
             break; //port C
         case 3:
-            GPIO_PORTD_DATA_R = GPIO_PORTD_DATA_R & pins_mask;
+            GPIO_PORTD_DATA_R = GPIO_PORTD_DATA_R & ~pins_mask;
             break; //port D
         case 4:
-            GPIO_PORTE_DATA_R = GPIO_PORTE_DATA_R & pins_mask;
+            GPIO_PORTE_DATA_R = GPIO_PORTE_DATA_R & ~pins_mask;
             break; //port E
         case 5:
-            GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & pins_mask;
+            GPIO_PORTF_DATA_R = GPIO_PORTF_DATA_R & ~pins_mask;
             break; //port F
         }
     }

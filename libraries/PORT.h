@@ -4,7 +4,16 @@
 // include Registers Header
 #include "tm4c123gh6pm.h"
 #include <stdint.h>
-#include "delay.h"
+
+typedef enum
+{
+    PORTA,
+    PORTB,
+    PORTC,
+    PORTD,
+    PORTE,
+    PORTF
+};
 
 typedef enum Port_PinDirectionType
 {
