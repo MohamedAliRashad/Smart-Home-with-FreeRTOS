@@ -1,14 +1,6 @@
-#include "LCD1.h"
+#include "LCD.h"
 #include <stdint.h>
-void delayMS(uint32_t n)				/*delay n ms(16MHz cpu clock)*/
-{
-	unsigned long volatile t;
-	t=1000*n;
-	while(t)
-	{
-		t--;
-	}
-}
+
 void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS OF PORT B"
 {
 	Port_Init(PORTB); //Port B init
