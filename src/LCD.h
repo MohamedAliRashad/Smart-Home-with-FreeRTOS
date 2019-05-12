@@ -4,6 +4,7 @@
 #include "PORT.h"
 #include "DIO.h"
 #include "tm4c123gh6pm.h"
+#include "delay.h"
 
 /* LCD HardWare Pins */
 #define RS  2
