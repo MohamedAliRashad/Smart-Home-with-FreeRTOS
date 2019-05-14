@@ -1,7 +1,5 @@
-#include<C:/Users/Mariam/Desktop/pwm/tm4c123gh6pm.h>
-#include "stdint.h"
 #include "PWM.h"
-//typedef unsigned long uint32_t;
+
 
 void Enable_PWM_clk ()
 {
@@ -27,7 +25,7 @@ void PWM_Init()
 	
 	Enable_PWM_clk();
 	
-		PWM_PORT_config();
+	PWM_PORT_config();
 
 	
 	SYSCTL_RCC_R |= SYSCTL_RCC_USEPWMDIV; //0x00100000  Enable PWM Clock Divisor
@@ -52,13 +50,6 @@ void PWM_Init()
 
 
 void PWM_set_dutyCycle(uint32_t duty_cycle)
-{ /*PWM1_3_CMPA_R = duty_cycle;
-	if(duty_cycle == 100){
-		PWM1_3_CMPA_R = 1; //mn 0 to 1 hayb2a zero 8er keda hayb2a 1
-	} else if(duty_cycle == 0) {
-		PWM1_3_CMPA_R = 5000 - 2;// mn 0 le 4998 zero 8er keda hyb2a 1 
-	}else {
-		PWM1_3_CMPA_R = (uint16_t)(5000 * (1 - (duty_cycle / 100.0)) - 1); 
-	}*/ 
+{ 
 	PWM1_3_CMPA_R= duty_cycle ;
 }
