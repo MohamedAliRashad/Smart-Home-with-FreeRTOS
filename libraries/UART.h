@@ -15,7 +15,7 @@ extern int8_t motor_dir ;
 
 extern int8_t potentiometer ;
 
-void UART_init (bool intEn) ;
+void UART7_init (bool intEn ,  uint32_t baudRate ) ;
 
 
 bool UART7_Send_NonBusy ( int8_t data ) ;

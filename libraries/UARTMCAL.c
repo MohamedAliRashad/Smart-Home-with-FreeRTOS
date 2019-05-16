@@ -2,7 +2,7 @@
 
 
 
-void UART7_init (  bool intEn , float baudRate ) { 
+void UART7_init (  bool intEn , uint32_t baudRate ) { 
 
 		
 	
