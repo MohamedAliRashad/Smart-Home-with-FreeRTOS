@@ -5,17 +5,17 @@
 #include "tm4c123gh6pm.h"
 #include <stdint.h>
 
-typedef enum
-{
-    PORTA,
-    PORTB,
-    PORTC,
-    PORTD,
-    PORTE,
-    PORTF
-};
+#define PORTA 0
+#define PORTB 1
+#define PORTC 2
+#define PORTD 3
+#define PORTE 4
+#define PORTF 5
 
-typedef enum Port_PinDirectionType
+#define SET_BIT(p,n) ((p) |= (1 << (n)))
+#define CLEAR_BIT(p,n) ((p) &= ~((1) << (n)))
+
+typedef enum
 {
     PORT_PIN_IN = 0,
     PORT_PIN_OUT = 1
