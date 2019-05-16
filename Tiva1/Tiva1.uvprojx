@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>..\libraries;..\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -386,6 +386,56 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>libraries</GroupName>
+          <Files>
+            <File>
+              <FileName>ADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\ADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>DIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\DIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>PORT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\PORT.c</FilePath>
+            </File>
+            <File>
+              <FileName>Temp_Sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\Temp_Sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\interrupt.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\UART.c</FilePath>
+            </File>
+            <File>
+              <FileName>PLL.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\PLL.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>Potentiometer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\libraries\Potentiometer.c</FilePath>
             </File>
           </Files>
         </Group>

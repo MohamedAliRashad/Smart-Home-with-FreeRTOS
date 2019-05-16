@@ -22,3 +22,13 @@
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\10.0.1\Source\include\mpu_wrappers.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\10.0.1\Source\include\task.h
 .\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS-FreeRTOS\10.0.1\Source\include\list.h
+.\objects\main.o: ..\libraries\Temp_Sensor.h
+.\objects\main.o: ..\libraries\tm4c123gh6pm.h
+.\objects\main.o: ..\libraries\ADC.h
+.\objects\main.o: ..\libraries\uart.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\main.o: ..\libraries\PORT.h
+.\objects\main.o: ..\libraries\DIO.h
+.\objects\main.o: ..\src\interrupt.h
+.\objects\main.o: ..\libraries\PLL.h
+.\objects\main.o: ..\libraries\PWM.h
