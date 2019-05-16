@@ -5,7 +5,8 @@
 #include "tm4c123gh6pm.h"
 #include "ADC.h"
 
-float Read_Potentiometer();
+uint16_t Read_Potentiometer();
 /* read Poentiometer Value */
+
 
 #endif

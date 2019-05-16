@@ -1,11 +1,8 @@
 
 #include "potentiometer.h"
 
-float Read_Potentiometer(uint8_t channel)
+uint16_t Read_Potentiometer()
 {
-    float voltage;
-    ADC0_init(channel, TIMER_TRIGGER); /* Initialize ADC with Analog Input Channel 1 and timer periodic triggering */
     ADC0_start_conversion();
-    voltage = ADC0_digital_toVoltage(result);
-    return voltage;
+    return ADC0_digital_toVoltage(result);
 }
