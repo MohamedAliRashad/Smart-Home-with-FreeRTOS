@@ -2,15 +2,14 @@
 #define	LCD_H
 
 #include "PORT.h"
-#include "DIO.h"
 #include "tm4c123gh6pm.h"
 #include "delay.h"
 
 /* LCD HardWare Pins */
-#define RS  2
-#define RW  3
-#define E   4
-#define LCD_CTRL_PORT        GPIO_PORTF_DATA_R
+#define RS  5
+#define RW  6
+#define E   7
+#define LCD_CTRL_PORT        GPIO_PORTA_DATA_R
 #define LCD_DATA_PORT        GPIO_PORTB_DATA_R
 
 /* LCD Commands */
@@ -35,4 +34,3 @@ void LCD_IntgerToString(uint32_t Data);
 
 
 #endif
-
