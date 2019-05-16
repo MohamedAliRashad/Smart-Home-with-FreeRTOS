@@ -16,7 +16,7 @@ void Port_Init(uint8_t port_index)
 		GPIO_PORTA_DEN_R = 0xFF;
 		break;
 
-	case 1:						  //port B
+	case 1: //port B
 		GPIO_PORTB_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTB_CR_R = 0xFF;
 		GPIO_PORTB_AFSEL_R = 0x00;
@@ -25,7 +25,7 @@ void Port_Init(uint8_t port_index)
 		GPIO_PORTB_DEN_R = 0xFF;
 		break;
 
-	case 2:						  //port c
+	case 2: //port c
 		GPIO_PORTC_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTC_CR_R = 0xFF;
 		GPIO_PORTC_AFSEL_R = 0x00;
@@ -34,7 +34,7 @@ void Port_Init(uint8_t port_index)
 		GPIO_PORTC_DEN_R = 0xFF;
 		break;
 
-	case 3:						  //port D
+	case 3: //port D
 		GPIO_PORTD_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTD_CR_R = 0xFF;
 		GPIO_PORTD_AFSEL_R = 0x00;
@@ -43,7 +43,7 @@ void Port_Init(uint8_t port_index)
 		GPIO_PORTD_DEN_R = 0xFF;
 		break;
 
-	case 4:						  //port E
+	case 4: //port E
 		GPIO_PORTE_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTE_CR_R = 0xFF;
 		GPIO_PORTE_AFSEL_R = 0x00;
@@ -52,7 +52,7 @@ void Port_Init(uint8_t port_index)
 		GPIO_PORTE_DEN_R = 0xFF;
 		break;
 
-	case 5:						  //port F
+	case 5: //port F
 		GPIO_PORTF_LOCK_R = GPIO_LOCK_KEY;
 		GPIO_PORTF_CR_R = 0xFF;
 		GPIO_PORTF_AFSEL_R = 0x00;

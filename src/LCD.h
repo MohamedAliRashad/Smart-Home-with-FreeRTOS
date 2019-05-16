@@ -1,16 +1,16 @@
 #ifndef LCD_H
-#define	LCD_H
+#define LCD_H
 
 #include "PORT.h"
 #include "tm4c123gh6pm.h"
 #include "delay.h"
 
 /* LCD HardWare Pins */
-#define RS  5
-#define RW  6
-#define E   7
-#define LCD_CTRL_PORT        GPIO_PORTA_DATA_R
-#define LCD_DATA_PORT        GPIO_PORTB_DATA_R
+#define RS 5
+#define RW 6
+#define E 7
+#define LCD_CTRL_PORT GPIO_PORTA_DATA_R
+#define LCD_DATA_PORT GPIO_PORTB_DATA_R
 
 /* LCD Commands */
 #define CLEAR_COMMAND 0x01
@@ -26,11 +26,9 @@ void LCD_SendData(uint8_t data);
 void LCD_ShowString(const char *Str);
 void LCD_init(void);
 void LCD_ClearScreen(void);
-void LCD_GoToRowColumn(uint8_t row,uint8_t col);
-void LCD_ShowStringRowAndColumn(uint8_t row,uint8_t col,const char *Str);
-char* itoa(int i, char b[]);
+void LCD_GoToRowColumn(uint8_t row, uint8_t col);
+void LCD_ShowStringRowAndColumn(uint8_t row, uint8_t col, const char *Str);
+char *itoa(int i, char b[]);
 void LCD_IntgerToString(uint32_t Data);
-
-
 
 #endif

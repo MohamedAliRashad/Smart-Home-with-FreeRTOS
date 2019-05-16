@@ -15,7 +15,6 @@ void LCD_init() //microcontroller initialization aiming to LCD "USING FULL PINS 
 	LCD_SendCommand(CURSOR_OFF); //Cursor off
 
 	LCD_SendCommand(CLEAR_COMMAND); //clear screen
-
 }
 void LCD_ClearScreen(void)
 {
@@ -24,34 +23,34 @@ void LCD_ClearScreen(void)
 
 void LCD_SendCommand(uint8_t com) //sending command function through port F pins(0,1,2), 0-->RS, 1-->RW, 2-->E
 {
-	CLEAR_BIT(LCD_CTRL_PORT,RS);
-	CLEAR_BIT(LCD_CTRL_PORT,RW); 
+	CLEAR_BIT(LCD_CTRL_PORT, RS);
+	CLEAR_BIT(LCD_CTRL_PORT, RW);
 	delayMS(1);
 
-	SET_BIT(LCD_CTRL_PORT,E);
+	SET_BIT(LCD_CTRL_PORT, E);
 	delayMS(1);
 
-	LCD_DATA_PORT = com;  //sending command to lcd
+	LCD_DATA_PORT = com; //sending command to lcd
 	delayMS(1);
 
-	CLEAR_BIT(LCD_CTRL_PORT,E);  //enable "E" is low
-	delayMS(1); //high to low delay 
+	CLEAR_BIT(LCD_CTRL_PORT, E); //enable "E" is low
+	delayMS(1);					 //high to low delay
 }
 
 void LCD_SendData(uint8_t data) //sending data to lcd function
 {
-	SET_BIT(LCD_CTRL_PORT,RS);
-	CLEAR_BIT(LCD_CTRL_PORT,RW); 
+	SET_BIT(LCD_CTRL_PORT, RS);
+	CLEAR_BIT(LCD_CTRL_PORT, RW);
 	delayMS(1);
 
-	SET_BIT(LCD_CTRL_PORT,E);
+	SET_BIT(LCD_CTRL_PORT, E);
 	delayMS(1);
 
-	LCD_DATA_PORT = data;  //sending command to lcd
+	LCD_DATA_PORT = data; //sending command to lcd
 	delayMS(1);
 
-	CLEAR_BIT(LCD_CTRL_PORT,E);  //enable "E" is low
-	delayMS(1); //high to low delay 
+	CLEAR_BIT(LCD_CTRL_PORT, E); //enable "E" is low
+	delayMS(1);					 //high to low delay
 }
 void LCD_GoToRowColumn(uint8_t row, uint8_t col)
 {
@@ -68,7 +67,7 @@ void LCD_GoToRowColumn(uint8_t row, uint8_t col)
 		break;
 	}
 
-	//to write to a specific address in the LCD 
+	//to write to a specific address in the LCD
 	// we need to apply the corresponding command 0x80 + Address
 
 	LCD_SendCommand(Address | SET_CURSOR_LOCATION);
@@ -84,21 +83,24 @@ void LCD_ShowString(const char *Str)
 	}
 }
 
-char* itoa(int i, char b[])
+char *itoa(int i, char b[])
 {
 	char const digit[] = "0123456789";
-	char* p = b;
+	char *p = b;
 	int shifter = i;
-	if (i < 0) {
+	if (i < 0)
+	{
 		*p++ = '-';
 		i *= -1;
 	}
-	do { //Move to where representation ends
+	do
+	{ //Move to where representation ends
 		++p;
 		shifter = shifter / 10;
 	} while (shifter);
 	*p = '\0';
-	do { //Move back, inserting digits as u go
+	do
+	{ //Move back, inserting digits as u go
 		*--p = digit[i % 10];
 		i = i / 10;
 	} while (i);
@@ -110,12 +112,10 @@ void LCD_IntgerToString(uint32_t Data)
 	char string[32];
 	itoa(Data, string);
 	LCD_ShowStringRowAndColumn(0, 0, string);
-
 }
 
 void LCD_ShowStringRowAndColumn(uint8_t row, uint8_t col, const char *Str)
 {
 	LCD_GoToRowColumn(row, col); /* go to to the required LCD position */
-	LCD_ShowString(Str); /* display the string */
-
+	LCD_ShowString(Str);		 /* display the string */
 }

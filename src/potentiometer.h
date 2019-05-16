@@ -6,7 +6,6 @@
 #include "ADC.h"
 
 uint16_t Read_Potentiometer();
-/* read Poentiometer Value */
-
+/* read Poentiometer Value and returns it as a voltage */
 
 #endif

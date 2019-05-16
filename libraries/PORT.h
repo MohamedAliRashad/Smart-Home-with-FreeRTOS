@@ -12,8 +12,8 @@
 #define PORTE 4
 #define PORTF 5
 
-#define SET_BIT(p,n) ((p) |= (1 << (n)))
-#define CLEAR_BIT(p,n) ((p) &= ~((1) << (n)))
+#define SET_BIT(p, n) ((p) |= (1 << (n)))
+#define CLEAR_BIT(p, n) ((p) &= ~((1) << (n)))
 
 typedef enum
 {
